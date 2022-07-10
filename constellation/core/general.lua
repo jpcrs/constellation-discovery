@@ -1,34 +1,32 @@
 ---Adds a new entry to `constellation\log.txt`. If you have `console.lua` loaded, it will also appear in the console box.
 ---
----@type fun(message: string)
----@param message string The message to log.
----.
 --- ### Example
 ---
 ---```
 ---constellation.log( "Hello world!" )
 ---```
-constellation.log = function()end
+---@param message string The message to log.
+---@type fun(message: string)
+constellation.log = function(message)end
 
 
 
 ---This will either show or hide the console box. console.lua already uses this.
 ---
----@type fun(boolean)
----@param boolean boolean Whether to show or hide the console box.
 ---.
 --- ### Example
 ---```
 ---⠀⠀-- turns on the console box.
 ---constellation.console( true )
 ---```
-constellation.console = function()end
+---@param boolean boolean Whether to show or hide the console box.
+---@type fun(boolean)
+constellation.console = function(boolean)end
 
 
 
 ---This will make Constellation attempt to calibrate for an officially supported game.
 ---
----@type fun()
 ---.
 --- ### Example
 ---
@@ -47,14 +45,13 @@ constellation.console = function()end
 ---⠀⠀-- actually start/calibrate the cheat.
 ---constellation.start()
 ---```
+---@type fun()
 constellation.start = function()end
 
 
 
 ---This will the basic data about a member's forum information.
 ---
----@type fun():string,number,number,number,number,number,boolean,boolean
----@return name,conversations,alerts,forum_id,posts,score,is_sdk,is_vip
 ---.
 --- ### Example
 ---
@@ -66,6 +63,8 @@ constellation.start = function()end
 ---constellation.constelia.say( CONSTELIA_EVENT_SAY, "Hello " .. username .."!\nYou have " .. alerts .. " unread alert(s).\nYou have " .. conversations .. " unread conversation(s).")
 ---```
 ---
+---@return string,number,number,number,number,number,boolean,boolean (name,conversations,alerts,forum_id,posts,score,is_sdk,is_vip)
+---@type fun():string,number,number,number,number,number,boolean,boolean
 constellation.forums = function()end
 
 
@@ -85,10 +84,6 @@ constellation.forums = function()end
 ---Player Condition Considerations (for CS:GO & TF2)
 ---This function will also not work the humanizer is already active. These two will not overlap.
 ---
----@type fun(angle_x: number, angle_y: number)
----@param angle_x number The X angle to move to.
----@param angle_y number The Y angle to move to.
----.
 --- ### Example
 ---
 ---local closest_player, angle_x, angle_y, true_fov = constellation.game.get_closest_player_fov( false, 7, 7.5 )
@@ -99,15 +94,15 @@ constellation.forums = function()end
 ---end
 ---
 ---constellation.humanizer( angle_x, angle_y )
-constellation.humanizer = function()end
+---@param angle_x number The X angle to move to.
+---@param angle_y number The Y angle to move to.
+---@type fun(angle_x: number, angle_y: number)
+constellation.humanizer = function(angle_x, angle_y)end
 
 
 
 --- This will get the currently calibrated game.
 ---
----@type fun(): number
----@return number The game_id.
----.
 --- ### Example
 ---
 ---```
@@ -115,77 +110,71 @@ constellation.humanizer = function()end
 ---⠀⠀constellation.log( "We're in CS:GO!" )
 ---end
 ---```
+---@return number The game_id.
+---@type fun(): number
 constellation.get_game = function()end
 
 
 
 ---This will execute a fantasy.cmd command for Constellation. fantasy.cmd is a command system similiar to terminal that executes code or actions depending on the input. This is only for advanced users. See the Web SDK using fantasy.cmd if you are curious on how to use this function.
 ---
----@type fun(command: string, element: string, value: string)
----@param command string The command to execute.
----@param element string The element to set.
----@param value string The value to set the element to.
----.
 --- ### Example
 ---
 ---```
 ---⠀⠀-- turns humanizer off.
 ---constellation.cmd( "set", "humanizer", "false" )
 ---```
-constellation.cmd = function()end
+---@param command string The command to execute.
+---@param element string The element to set.
+---@param value string The value to set the element to.
+---@type fun(command: string, element: string, value: string)
+constellation.cmd = function(command, element, value)end
 
 
 
 ---This function will turn on/off the Hello Kitty cursor.
 ---
----@type fun(boolean: boolean)
----@param boolean boolean Whether to turn on or off the Hello Kitty cursor.
----.
 --- ### Example
 ---
 ---```
 ---⠀⠀-- turns off Hello Kitty cursor.
 ---constellation.cursor( false )
 ---```
-constellation.cursor = function()end
+---@param boolean boolean Whether to turn on or off the Hello Kitty cursor.
+---@type fun(boolean: boolean)
+constellation.cursor = function(boolean)end
 
 
 
 ---This function will sleep Constellation for a certain amount of milliseconds.
 ---
----@type fun(milliseconds: number)
----@param milliseconds number The amount of milliseconds to sleep for.
----.
 --- ### Example
 ---
 ---```
 ---⠀⠀-- sleep for 1 second
 ---constellation.sleep( 1000 )
 ---```
-constellation.sleep = function()end
+---@param milliseconds number The amount of milliseconds to sleep for.
+---@type fun(milliseconds: number)
+constellation.sleep = function(milliseconds)end
 
 
 
 ---This gets your license key. This can be used for the Web API.
 ---
----@type fun(): string
----@return string Your license key
----.
 --- ### Example
 ---
 ---```
 ---local my_key = constellation.license()
 ---```
+---@type fun(): string
+---@return string Your license key
 constellation.license = function()end
 
 
 
 ---This will set the game window that Constellation will look for. This wraps the function FindWindowA.
 ---
----@type fun(window_name: string, string: string)
----@param window_name string The name of the window to set.
----@param string string idk lul.
----.
 --- ### Example
 ---
 ---```
@@ -211,15 +200,15 @@ constellation.license = function()end
 ---
 ---return window_test
 ---```
-constellation.set_window = function()end
+---@param window_name string The name of the window to set.
+---@param string string idk lul.
+---@type fun(window_name: string, string: string)
+constellation.set_window = function(window_name, string)end
 
 
 
 ---This gets the window Constellation is looking for with the specific game.
 ---
----@type fun(): number
----@return number
----.
 --- ### Example
 ---
 ---```
@@ -245,18 +234,19 @@ constellation.set_window = function()end
 ---
 ---return window_test
 ---```
+---@return number
+---@type fun(): number
 constellation.get_window = function()end
 
 
 
 ---This will enable/disable hypermode.
 ---
----@type fun(boolean: boolean)
----@param boolean Whether to enable or disable hypermode.
----.
 --- ### Example
 ---
 ---```
 ---constellation.hypermode( true )
 ---```
-constellation.hypermode = function() end
+---@param boolean boolean Whether to enable or disable hypermode.
+---@type fun(boolean: boolean)
+constellation.hypermode = function(boolean) end

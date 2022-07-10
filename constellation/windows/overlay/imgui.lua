@@ -1,49 +1,41 @@
----@type imgui
+---@class imgui
 imgui = {}
 
 ---Draws a (?), in which displays a text when hovered.
 ---
----@type fun(text: string)
----@param text string The text to display.
----.
 --- ### Example
 ---
 ---```
 ---constellation.windows.overlay.imgui.help( "This button does blah blah" )
 ---```
-imgui.help = function()end
+---@param text string The text to display.
+---@type fun(text: string)
+imgui.help = function(text)end
 
 ---ImGui::SetNextWindowPos
 ---
----@type fun(x: number, y: number)
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun(x: number, y: number)
 imgui.set_next_position = function()end
 
 
 ---ImGui::SetNextWindowSize
 ---
----@type fun(x: number, y: number)
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun(x: number, y: number)
 imgui.set_next_size = function()end
 
 
 ---This function displays an image within an ImGui window. The image must have been created through constellation.windows.overlay.add_image.
 ---
----@type fun(image_id: number, width: number, height: number)
----@param image_id number The image ID.
----@param width number The width of the image.
----@param height number The height of the image.
----.
 --- ### Example
 ---
 ---```
@@ -57,419 +49,414 @@ imgui.set_next_size = function()end
 ---    constellation.windows.overlay.imgui.end_window( )
 ---end
 ---```
-imgui.image = function()end
+---@param image_id number The image ID.
+---@param width number The width of the image.
+---@param height number The height of the image.
+---@type fun(image_id: number, width: number, height: number)
+imgui.image = function(image_id, width, height)end
 
 
 ---ImGui::BeginMenuBar
 ---
----@type fun(): boolean
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun(): boolean
 imgui.menu_bar = function()end
 
 
 ---ImGui::BeginMenu
 ---
----@type fun(): boolean
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun(): boolean
 imgui.menu = function()end
 
 
 ---ImGui::MenuItem
 ---
----@type fun(label: string, shortcut: string): boolean
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
-imgui.menu_item = function()end
+---@param label string The label of the menu item.
+---@param shortcut string The shortcut of the menu item.
+---@type fun(label: string, shortcut: string): boolean
+imgui.menu_item = function(label, shortcut)end
 
 
 ---ImGui::EndMenu
 ---
----@type fun()
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun()
 imgui.end_menu = function()end
 
 
 ---ImGui::EndMenuBar
 ---
----@type fun()
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun()
 imgui.end_menu_bar = function()end
 
 
 --- ImGui::ShowStyleEditor
 ---
----@type fun()
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun()
 imgui.style_editor = function()end
 
 
 ---ImGui::Begin
 ---
----@type fun(name: string, ImGuiWindowFlags: number)
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
-imgui.window = function()end
+---@param name string The name of the window.
+---@param ImGuiWindowFlags number The flags of the window.
+---@type fun(name: string, ImGuiWindowFlags: number)
+imgui.window = function(name, ImGuiWindowFlags)end
 
 
 ---ImGui::End
 ---
----@type fun()
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun()
 imgui.end_window = function()end
 
 
 ---ImGui::SetCursorPos
 ---
----@type fun(x: number, y: number)
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
-imgui.set = function()end
+---@param x number The x position.
+---@param y number The y position.
+---@type fun(x: number, y: number)
+imgui.set = function(x, y)end
 
 
 ---ImGui::GetCursorPos
 ---
----@type fun(): number, number
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun(): number, number
 imgui.get = function()end
 
 
 ---This creates a combo box with ImGui::Combo that contains virtual keys.
 ---
----@type fun(label: string, fantasyvar: string)
----.
 --- ### Example
 ---
 ---```
 ---constellation.windows.overlay.imgui.key( "Humanizer Key", "humanizer_key" )
 ---```
-imgui.key = function()end
+---@param label string The label of the combo box.
+---@param fantasyvar string The name of the variable to store the key in.
+---@type fun(label: string, fantasyvar: string)
+imgui.key = function(label, fantasyvar)end
 
 
 ---ImGui::TextColored
 ---
----@type fun(text: string, r: number, g: number, b: number, a: number)
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
-imgui.text = function()end
+---@param text string The text to display.
+---@param r number The red value.
+---@param g number The green value.
+---@param b number The blue value.
+---@param a number The alpha value.
+---@type fun(text: string, r: number, g: number, b: number, a: number)
+imgui.text = function(text, r, g, b, a)end
 
 
 ---ImGui::Button
 ---
----@type fun(label: string, width: number, height: number)
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
-imgui.button = function()end
+---@param label string The label of the button.
+---@param width number The width of the button.
+---@param height number The height of the button.
+---@type fun(label: string, width: number, height: number)
+imgui.button = function(label, width, height)end
 
 
 ---ImGui::SameLine
 ---
----@type fun(offset_from_x: number, spacing: number)
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
-imgui.same_line = function()end
+---@param offset_from_x number The offset from the x position.
+---@param spacing number The spacing between the x position and the next element.
+---@type fun(offset_from_x: number, spacing: number)
+imgui.same_line = function(offset_from_x, spacing)end
 
 
 ---ImGui::Combo
 ---
----@type fun(label: string, fantasyvar: string, items_separated_by_pipe: string)
----@param label string The label of the combo box.
----@param fantasyvar string The variable that will be set to the selected item.
----@param items_separated_by_pipe string The items of the combo box, separated by "|"
----.
 --- ### Example
 ---
 ---```
 ---constellation.windows.overlay.imgui.combo( "Favorite Color", "fav_color_var", "Red|Green|Yellow|Blue|Purple" )
 ---```
-imgui.combo = function()end
+---@param label string The label of the combo box.
+---@param fantasyvar string The variable that will be set to the selected item.
+---@param items_separated_by_pipe string The items of the combo box, separated by "|"
+---@type fun(label: string, fantasyvar: string, items_separated_by_pipe: string)
+imgui.combo = function(label, fantasyvar, items_separated_by_pipe)end
 
 
 ---ImGui::ListBox
 ---
----@type fun(label: string, fantasyvar: string, items_separated_by_pipe: string, height: number)
----@param label string The label of the combo box.
----@param fantasyvar string The variable that will be set to the selected item.
----@param items_separated_by_pipe string The items of the combo box, separated by "|"
----@param height number The height of the list box.
----.
 --- ### Example
 ---
 ---```
 ---constellation.windows.overlay.imgui.listbox( "Favorite Color", "fav_color_var", "Red|Green|Yellow|Blue|Purple", 30 )
 ---```
-imgui.listbox = function()end
+---@param label string The label of the combo box.
+---@param fantasyvar string The variable that will be set to the selected item.
+---@param items_separated_by_pipe string The items of the combo box, separated by "|"
+---@param height number The height of the list box.
+---@type fun(label: string, fantasyvar: string, items_separated_by_pipe: string, height: number)
+imgui.listbox = function(label, fantasyvar, items_separated_by_pipe, height)end
 
 
 ---ImGui::InputTextMultiline
 ---
----@type fun(label: string, width: number, height: number, fantasyvar: string, ImGuiInputTextFlags: number): boolean
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
-imgui.textarea = function()end
+---@param label string The label of the text box.
+---@param width number The width of the text box.
+---@param height number The height of the text box.
+---@param fantasyvar string The variable that will be set to the text.
+---@param ImGuiInputTextFlags number The flags of the text box.
+---@type fun(label: string, width: number, height: number, fantasyvar: string, ImGuiInputTextFlags: number): boolean
+imgui.textarea = function(label, width, height, fantasyvar, ImGuiInputTextFlags)end
 
 
 ---ImGui::PushItemWidth
 ---
----@type fun(item_width: number)
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
-imgui.push_width = function()end
+---@param item_width number The width of the item.
+---@type fun(item_width: number)
+imgui.push_width = function(item_width)end
 
 
 ---ImGui::PopItemWidth
 ---
----@type fun()
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun()
 imgui.pop_width = function()end
 
 
 ---ImGui::InputText
 ---
----@type fun(label: string, fantasyvar: string, ImGuiInputTextFlags: number)
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
-imgui.inputtext = function()end
+---@param label string The label of the text box.
+---@param fantasyvar string The variable that will be set to the text.
+---@param ImGuiInputTextFlags number The flags of the text box.
+---@type fun(label: string, fantasyvar: string, ImGuiInputTextFlags: number)
+imgui.inputtext = function(label, fantasyvar, ImGuiInputTextFlags)end
 
 
 ---ImGui::CheckBox
 ---
----@type fun(label: string, fantasyvar: string)
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
-imgui.checkbox = function()end
+---@param label string The label of the check box.
+---@param fantasyvar string The variable that will be set to the checked state.
+---@type fun(label: string, fantasyvar: string)
+imgui.checkbox = function(label, fantasyvar)end
 
 
 ---ImGui::SliderInt
 ---
----@type fun(label: string, fantasyvar: string, min: number, max: number)
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun(label: string, fantasyvar: string, min: number, max: number)
 imgui.slider = function()end
 
 
 ---ImGui::InputInt
 ---
----@type fun(label: string, fantasyvar: string)
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun(label: string, fantasyvar: string)
 imgui.input_slider = function()end
 
 
 ---ImGui::InputFloat
 ---
----@type fun(label: string, fantasyvar: string)
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun(label: string, fantasyvar: string)
 imgui.input_sliderf = function()end
 
 
 ---ImGui::SliderFloat
 ---
----@type fun(label: string, fantasyvar: string, min: number, max: number, step: string)
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun(label: string, fantasyvar: string, min: number, max: number, step: string)
 imgui.sliderf = function()end
 
 
 ---ImGui::ColorEdit3
 ---
----@type fun(label: string, fantasyvar: string)
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun(label: string, fantasyvar: string)
 imgui.color = function()end
 
 
 ---ImGui::Separator
 ---
----@type fun()
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun()
 imgui.separator = function()end
 
 
 ---ImGui::BeginTabBar
 ---
----@type fun(label: string)
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun(label: string)
 imgui.tabbar = function()end
 
 
 ---ImGui::EndTabBar
 ---
----@type fun()
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun()
 imgui.endtabbar = function()end
 
 
 ---ImGui::TabItem
 ---
----@type fun(label: string): boolean
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun(label: string): boolean
 imgui.tabitem = function()end
 
 
 ---ImGui::EndTabItem
 ---
----@type fun()
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun()
 imgui.endtabitem = function()end
 
 
 ---ImGui::IsItemHovered
 ---
----@type fun(): boolean
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun(): boolean
 imgui.is_hovered = function()end
 
 
 ---This function calls ImGui::GetStyle and allows you to set the style options for your ImGui creation. Parameters vary depending on how much arguments the style accepts. See CMF for an example.
 ---
----@type fun(string: string, number: number, number2: number, number3: number, number4: number, number5: number)
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun(string: string, number: number, number2: number, number3: number, number4: number, number5: number)
 imgui.style = function()end
 
 
 ---This function is different from constellation.windows.overlay.add_font. This loads a font into ImGui's database, not the overlay module. Therefore, if you were to add the same font with both functions, you will get a different font id. The fonts loaded from this function must be in constellation\resources\. This function eventually calls AddFontFromFileTTF in ImGui.
 ---
----@type fun(name_of_ttf_font: string, size: number): number
----@param name_of_ttf_font string The name of the TTF font.
----@param size number The size of the font.
----@return number The font id.
----.
 --- ### Example
 ---
 ---```
@@ -483,40 +470,37 @@ imgui.style = function()end
 ---    constellation.windows.overlay.imgui.pop_font( )
 ---end
 ---```
-imgui.add_font = function()end
+---@param name_of_ttf_font string The name of the TTF font.
+---@param size number The size of the font.
+---@return number The font id.
+---@type fun(name_of_ttf_font: string, size: number): number
+imgui.add_font = function(name_of_ttf_font, size)end
 
 
 ---ImGui::PushFont
 ---
----@type fun(font_id: number)
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun(font_id: number)
 imgui.push_font = function()end
 
 
 ---ImGui::PopFont
 ---
----@type fun()
----.
 --- ### Example
 ---
 ---```
 ---
 ---```
+---@type fun()
 imgui.pop_font = function()end
 
 
 ---This will create a file browser. This is Constellation's modified version of Lime2D File Dialog ImGui Extension.
 ---
----@type fun(path: string, option: number): string
----@param path string The path to browse.
----@param option number The option to use (File or folder) [ImGuiFileBrowser_SelectFile, ImGuiFileBrowser_SelectFolder].
----@return string The path to the selected file/folder.
----.
 --- ### Example
 ---
 ---```
@@ -529,4 +513,8 @@ imgui.pop_font = function()end
 ----- create notification showing the file/folder we selected.
 ---constellation.windows.overlay.notification( selected_object, 5000 )
 ---```
-imgui.file_browser = function()end
+---@param path string The path to browse.
+---@param option number The option to use (File or folder) [ImGuiFileBrowser_SelectFile, ImGuiFileBrowser_SelectFolder].
+---@return string The path to the selected file/folder.
+---@type fun(path: string, option: number): string
+imgui.file_browser = function(path, option)end

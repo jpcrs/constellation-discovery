@@ -1,5 +1,5 @@
----@type player
-local player = {
+---@class player
+player = {
     ---@type number
     address = nil,
     ---@type boolean
@@ -8,7 +8,7 @@ local player = {
     team = nil
 }
 
----@type steam_sumary
+---@class steam_summary
 steam_summary = {
     ---@type string
     name = nil,
@@ -34,7 +34,7 @@ steam_summary = {
     gameid = nil,
 }
 
----@type steam_bans
+---@class steam_bans
 steam_summary = {
     ---@type string
     steamid = nil,
@@ -52,7 +52,7 @@ steam_summary = {
     economy = nil,
 }
 
----@type steam_friends
+---@class steam_friends
 steam_friends = {
     ---@type string
     steamid = nil,

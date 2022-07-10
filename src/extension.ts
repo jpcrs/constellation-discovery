@@ -2,7 +2,7 @@ import { join as pathJoin } from "path";
 import * as vscode from "vscode";
 
 function setExternalLibrary(folder: string, enable: boolean) {
-	const extensionId = "jpcrs.constellation-discovery2";
+	const extensionId = "jpcrs.constellation-discovery";
 	const extensionPath = vscode.extensions.getExtension(extensionId)?.extensionPath; // prettier-ignore
 	const config = vscode.workspace.getConfiguration("Lua");
 	const library: string[] | undefined = config.get("workspace.library");

@@ -1,4 +1,4 @@
----@type player
+---@class player
 player = {
     ---@type number
     address = nil,
@@ -37,7 +37,7 @@ player = {
     get_class = nil,
 }
 
----@type weapon
+---@class weapon
 weapon = {
     ---@type number
     address = nil,
@@ -71,9 +71,9 @@ weapon = {
     ammo_type = nil,
 }
 
----@type game_entity
+---@class game_entity
 game_entity = {
-    ---@type address
+    ---@type number
     address = nil,
     ---@type boolean
     is_dormant = nil,
@@ -85,7 +85,7 @@ game_entity = {
     get_class = nil,
 }
 
----@type origin
+---@class origin
 origin = {
     ---@type number
     x = nil,
@@ -95,7 +95,7 @@ origin = {
     z = nil,
 }
 
----@type game_render_bounds
+---@class game_render_bounds
 game_render_bounds = {
     ---@type number 
     min_x = nil,
@@ -111,7 +111,7 @@ game_render_bounds = {
     max_z = nil,
 }
 
----@type game_globals
+---@class game_globals
 game_globals = {
     ---@type number
     realtime = nil,

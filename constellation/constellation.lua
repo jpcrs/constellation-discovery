@@ -1,6 +1,7 @@
 require "lua"
 require "game"
 
+---@class constellation
 constellation = {
     ---@type constelia
     constelia = nil,
