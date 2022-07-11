@@ -1,14 +1,25 @@
 {
   "name": "constellation-discovery",
-	"displayName": "constellation-discovery",
+	"displayName": "Constellation Discovery",
 	"publisher": "jpcrs",
-	"description": "",
+	"description": "FC Constellation Intellisense",
 	"version": "0.0.1",
-	"engines": {
-		"vscode": "^1.69.0"
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jpcrs/constellation-discovery"
 	},
+	"engines": {
+		"vscode": "^1.65.0"
+	},
+	"keywords": [
+		"Lua",
+		"IntelliSense",
+		"FantasyCat",
+		"Constellation"
+	],
 	"categories": [
-		"Other"
+		"Linters",
+		"Programming Languages"
 	],
 	"activationEvents": [
 		"onLanguage:lua",
@@ -25,7 +36,7 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.69.0",
+		"@types/vscode": "^1.65.0",
 		"@types/glob": "^7.2.0",
 		"@types/mocha": "^9.1.1",
 		"@types/node": "16.x",
