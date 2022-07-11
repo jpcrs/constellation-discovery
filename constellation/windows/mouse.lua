@@ -1,6 +1,6 @@
 ---These function(s) perform basic cursor related actions from the Windows API. See constellation.driver Kernel Mouse Simulation to actually move your cursor and control your mouse behavior. Unlike Parallatic, there is no usermode mouse simulation. Constellation only contains kernel simulation. Kernel mouse simulation can only be found in constellation.driver functions. These functions are throwaway functions that might be useful, but don't simulate mouse behavior.
 ---@class mouse
-mouse = {}
+local mouse = {}
 
 
 ---Gets your cursor position.

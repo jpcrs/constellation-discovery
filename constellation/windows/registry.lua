@@ -5,7 +5,7 @@
 ---HKEY_CURRENT_CONFIG
 ---HKEY_USERS
 ---@class registry
-registry = {}
+local registry = {}
 
 
 ---This will read a string value.

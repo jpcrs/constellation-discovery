@@ -1,6 +1,6 @@
 ---These function(s) allow you to manage the overlay feature in Constellation.
 ---@class overlay
-overlay = {
+local overlay = {
     ---@type imgui
     imgui = nil
 }

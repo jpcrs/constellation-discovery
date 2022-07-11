@@ -1,6 +1,6 @@
 ---These function(s) are for file management.
 ---@class file
-file = {}
+local file = {}
 
 ---This will write to a file. However, the old content will be erased. If the file doesn't exist, it will create one for you.
 --- ### Example

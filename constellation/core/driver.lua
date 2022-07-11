@@ -1,6 +1,6 @@
 ---These function(s) perform manage interactions with the driver. Some of these functions require a moderate understanding of programming. Using these functions incorrectly can damage your computer.
 ---@class driver
-driver = {}
+local driver = {}
 
 
 
@@ -152,3 +152,29 @@ driver.move = function(x, y, flags)end
 ---
 ---@type fun(x: number, y: number, flags: number)
 driver.mouse = function()end
+
+---Pattern scanningPattern scanning
+---
+--- ### Example
+---```
+---⠀⠀-- https://github.com/frk1/hazedumper/blob/master/config.json#L285
+---local dwLocalPlayer = constellation.driver.pattern( 
+    ---⠀⠀module_client.address, -- client.dll
+---⠀⠀module_client.size, -- client.dll's size.
+---⠀⠀"8D 34 85 ? ? ? ? 89 15 ? ? ? ? 8B 41 08 8B 48 04 83 F9 FF", -- pattern
+---⠀⠀3, -- offset
+---⠀⠀4, -- extra
+---⠀⠀0, -- unrelativity
+---)
+---
+---⠀⠀-- dwLocalPlayer should equal 14316652 (as of this documentation edit) | https://github.com/frk1/hazedumper/blob/master/csgo.json#L34
+---constellation.log( dwLocalPlayer )
+---```
+---@param module_address number The address of the module to scan.
+---@param module_size number The size of the module to scan.
+---@param pattern string The pattern to scan for.
+---@param offset number The offset to start the scan at.
+---@param extra number The number of extra bytes to scan for.
+---@param unrelativity number The number of bytes to skip before the pattern?
+---@type fun(module_address: number, module_size: number, pattern: string, offset: number, extra: number, unrelativity: number)
+driver.pattern = function(module_address, module_size, pattern, offset, extra, unrelativity)end

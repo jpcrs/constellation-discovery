@@ -1,6 +1,6 @@
 ---These function(s) simulate usermode keyboard input. The first parameter accepts a virtual key. See Virtual-Key Codes
 ---@class keyboard
-keyboard = {}
+local keyboard = {}
 
 
 ---This holds down a key.

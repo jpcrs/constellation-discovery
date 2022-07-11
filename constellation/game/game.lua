@@ -1,6 +1,6 @@
 ---These function(s) are used for gathering informaton about CS:GO/TF2/CSS/Dota 2. Dota 2 may not support most of these functions.
 ---@class game
-game = {
+local game = {
     ---@type bsp
     bsp = nil
 }

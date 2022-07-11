@@ -1,6 +1,6 @@
 ---These function(s) perform general WinAPI related actions.
 ---@class windows
-windows = {
+local windows = {
     ---@type capture
     capture = nil,
     ---@type file

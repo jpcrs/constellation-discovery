@@ -2,7 +2,7 @@
 ---
 ---See the guide thread "Image Manipulation (constellation.windows.capture)" for a detailed breakdown and further example usage of these functions.
 ---@class capture
-capture = {
+local capture = {
 
 }
 

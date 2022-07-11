@@ -1,5 +1,5 @@
 ---@class imgui
-imgui = {}
+local imgui = {}
 
 ---Draws a (?), in which displays a text when hovered.
 ---
